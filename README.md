@@ -1,97 +1,76 @@
-README
-Project Title: Amazon Product Scraper
-This project is a web scraping tool that collects product information from Amazon India using Selenium and BeautifulSoup. The scraper retrieves data such as product name, URL, price, rating, number of reviews, manufacturer, and ASIN, and saves it to a CSV file.
+# Amazon Product Scraper
 
-Table of Contents
-Features
-Requirements
-Installation
-Usage
-Contributing
-License
+A Python-based web scraper that extracts detailed product information from Amazon India's search results. The script collects data such as product names, prices, ratings, reviews, and additional product details, saving them to a CSV file for further analysis.
 
-Features
-Scrapes multiple pages of products from Amazon.
-Extracts detailed product information including:
-Product Name
-Product URL
-Product Price
-Rating
-Number of Reviews
-Manufacturer
-ASIN
-Saves the scraped data to a CSV file for easy access and analysis.
-Requirements
-To run this project, you need:
+## Features
 
-Python 3.x
-Selenium
-BeautifulSoup4
-Chrome WebDriver
-You can install the required Python packages using pip:
+- Scrapes multiple pages of Amazon search results (up to 20 pages)
+- Extracts detailed product information including:
+  - Product Name
+  - Product URL
+  - Price
+  - Rating
+  - Number of Reviews
+  - Manufacturer
+  - ASIN (Amazon Standard Identification Number)
+- Handles different product detail page layouts (list and table formats)
+- Saves data in CSV format for easy analysis
 
-bash
+## Prerequisites
 
-Verify
+Before running the script, make sure you have the following installed:
+- Python 3.x
+- Chrome WebDriver
+- Required Python packages:
+  ```
+  selenium
+  beautifulsoup4
+  ```
 
-Open In Editor
-Edit
-Copy code
-pip install selenium beautifulsoup4
-Make sure to have Chrome WebDriver installed and added to your system PATH.
+## Installation
 
-Installation
-Clone the repository:
+1. Clone this repository:
+   ```bash
+   git clone [your-repository-url]
+   ```
 
-bash
+2. Install required packages:
+   ```bash
+   pip install selenium beautifulsoup4
+   ```
 
-Verify
+3. Download and install ChromeDriver:
+   - Visit the [ChromeDriver downloads page](https://sites.google.com/chromium.org/driver/)
+   - Download the version that matches your Chrome browser
+   - Add the ChromeDriver to your system's PATH
 
-Open In Editor
-Edit
-Copy code
-git clone https://github.com/yourusername/amazon-product-scraper.git
-Navigate to the project directory:
+## Usage
 
-bash
+1. Update the `URL` variable in the script if you want to search for different products:
+   ```python
+   URL = "https://www.amazon.in/s?k=bags&crid=2M096C61O4MLT&qid=1653308124&sprefix=ba%2Caps%2C283&ref=sr_pg_1"
+   ```
 
-Verify
+2. Run the script:
+   ```bash
+   python amazon_scraper.py
+   ```
 
-Open In Editor
-Edit
-Copy code
-cd amazon-product-scraper
-Install the required packages:
+3. The script will create a `Scraped_Data.csv` file containing the extracted information.
 
-bash
+## Output Format
 
-Verify
+The script generates a CSV file with the following columns:
+- Product URL
+- Product Name
+- Product Price
+- Rating
+- Number of reviews
+- Manufacturer
+- ASIN
 
-Open In Editor
-Edit
-Copy code
-pip install -r requirements.txt
-Usage
-Open the script file and modify the URL variable to search for the desired products on Amazon India.
 
-Run the script:
 
-bash
 
-Verify
 
-Open In Editor
-Edit
-Copy code
-python scraper.py
-The scraped data will be saved in a file named Scraped_Data.csv in the same directory.
-
-Contributing
-Contributions are welcome! If you have suggestions for improvements or features, please feel free to submit a pull request or open an issue.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Note
-On November 10, 2024, an error occurred during scraping due to a traffic issue on the Amazon page. Please ensure to handle such exceptions in your implementation to avoid interruptions.
 
